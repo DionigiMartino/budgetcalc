@@ -5,7 +5,7 @@ import Aux from '../../Hoc/Hoc';
 const Budget = props => {
 
     let earn = props.earning.reduce((a, b) => {
-        return a + b
+       return a + b
     })
 
     let exp = props.expenses.reduce((a, b) => {

@@ -9,7 +9,10 @@ class ContainerApp extends Component {
         super(props);
         this.state = {
             optionValue: '+',
-            earn: [14, 21, 214, 123 ],
+            earn: [
+                {text: 'Bo', numb: 14},
+                {text: 'Bo2', numb: 11}
+            ],
             exp: [11, 5, 8, 91],
             total: null
         }
@@ -29,19 +32,19 @@ class ContainerApp extends Component {
     }
 
     updateBudget(){
-        let earning = this.state.earn.reduce((a, b) => {
-            return a + b;
-        });
+        // let earning = this.state.earn.reduce((a, b) => {
+        //     return a + b;
+        // });
 
-        let expenses = this.state.exp.reduce((a, b) => {
-            return a + b;
-        })
+        // let expenses = this.state.exp.reduce((a, b) => {
+        //     return a + b;
+        // })
 
-        let totalBudget = earning - expenses;
+        // let totalBudget = earning - expenses;
 
-        this.setState({
-            total: totalBudget
-        })
+        // this.setState({
+        //     total: totalBudget
+        // })
     }
 
     addCount(e){
@@ -61,7 +64,7 @@ class ContainerApp extends Component {
 
         return(
             <Aux>
-                <Budget earning={this.state.earn} expenses={this.state.exp} total={this.state.total}/>
+                <Budget earning={this.state.earn.numb} expenses={this.state.exp} total={this.state.total}/>
                 <div className={styles.ContainerWhole}>
                     <form onSubmit={(e) => this.addCount(e)} className={styles.FormCont}>
                         <select onChange={this.changeOption} ref={(a) => this._inputElement = a} className={this.state.optionValue === '+' ? classes = [styles.selectValue, styles.Green].join(' ') : classes = [styles.selectValue, styles.Red].join(' ')}>
