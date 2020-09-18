@@ -47,11 +47,11 @@ class ContainerApp extends Component {
     addCount(e){
         e.preventDefault();
 
-        if(this._inputNewValue.value !== ''){
-            console.log(this._inputNewValue.value);
+        if(this._inputElement.value === '+'){
+            console.log('Earnings: ' + this._inputNewValue.value + ' ' + this._inputNumber.value);
             this._inputNewValue.value = ''
         } else {
-            alert('Inserisci un valore')
+            console.log('Expenses: ' + this._inputNewValue.value + ' ' + this._inputNumber.value) 
         }
     }
 
