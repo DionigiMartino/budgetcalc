@@ -1,0 +1,59 @@
+.ContainerWhole {
+    width: 80%;
+    height: auto;
+    margin: 2.5% auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.FormCont {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.selectValue {
+    padding: 10px 5px;
+    cursor: pointer;
+    transition: all .8s;
+    background: transparent;
+    border: none;
+}
+
+.selectValue:focus {
+    outline: none;
+}
+
+.inputValue {
+    width: 80%;
+    height: auto;
+    padding: 5px 15px;
+    border: none;
+    background: transparent;
+    color: #fff;
+}
+
+.inputValue:focus {
+    outline: none;
+}
+
+.ButtonSubmit {
+    border: none;
+    padding: 5px 25px;
+    background: transparent;
+    color: #fff;
+}
+
+.Green {
+    border-bottom: 2px solid rgb(19, 190, 19);
+    color: rgb(19, 190, 19);
+    transition: all .6s;
+}
+
+.Red {
+    border-bottom: 2px solid rgb(184, 32, 32);
+    color: rgb(184, 32, 32);
+    transition: all .6s;
+}
