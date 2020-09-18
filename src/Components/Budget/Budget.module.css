@@ -1,0 +1,39 @@
+.BudgetCont {
+    width: 60%;
+    height: auto;
+    margin: 2.5% auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.BudgetCont h2 {
+    color: #fff;
+}
+
+.BudgetDisplay {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Earn, .Exp {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.Total {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Good, .Earn {
+    color: rgb(19, 190, 19);
+    transition: all .6s;
+}
+
+.Bad, .Exp {
+    color: rgb(184, 32, 32);
+    transition: all .6s;
+}

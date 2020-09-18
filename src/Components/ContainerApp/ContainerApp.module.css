@@ -27,12 +27,21 @@
 }
 
 .inputValue {
-    width: 80%;
+    width: 60%;
     height: auto;
     padding: 5px 15px;
     border: none;
     background: transparent;
     color: #fff;
+}
+
+.numberValue {
+    width: 5%;
+    padding: 10px 5px;
+    cursor: pointer;
+    transition: all .8s;
+    background: transparent;
+    border: none;
 }
 
 .inputValue:focus {
