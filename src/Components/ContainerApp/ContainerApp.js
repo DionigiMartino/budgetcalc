@@ -64,7 +64,7 @@ class ContainerApp extends Component {
 
         return(
             <Aux>
-                <Budget earning={this.state.earn.numb} expenses={this.state.exp} total={this.state.total}/>
+                <Budget earning={this.state.earn} expenses={this.state.exp} total={this.state.total}/>
                 <div className={styles.ContainerWhole}>
                     <form onSubmit={(e) => this.addCount(e)} className={styles.FormCont}>
                         <select onChange={this.changeOption} ref={(a) => this._inputElement = a} className={this.state.optionValue === '+' ? classes = [styles.selectValue, styles.Green].join(' ') : classes = [styles.selectValue, styles.Red].join(' ')}>
