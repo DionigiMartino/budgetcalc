@@ -3,6 +3,7 @@ import styles from './ContainerApp.module.css'
 
 import Aux from '../../Hoc/Hoc'
 import Budget from '../Budget/Budget'
+import List from '../List/List';
 
 class ContainerApp extends Component {
     constructor(props){
@@ -10,13 +11,13 @@ class ContainerApp extends Component {
         this.state = {
             optionValue: '+',
             earn: [
-                {text: 'Bo', numb: 14},
-                {text: 'Bo2', numb: 11},
-                {text: 'Bo3', numb: 20}
+                {text: 'Bonifico Gruppo Editori', numb: 14},
+                {text: 'Pagamento Aicon', numb: 11},
+                {text: 'Soldi regalati', numb: 20}
             ],
             earnTot: null,
             exp: [
-                {text: 'Bo2', numb: 18},
+                {text: 'Bo2', numb: 123},
                 {text: 'Bo34', numb: 1},
                 {text: 'Bo12', numb: 2}
             ],
@@ -108,6 +109,7 @@ class ContainerApp extends Component {
                         <input type="number" placeholder="Add Number..." ref={(a) => this._inputNumber = a} className={this.state.optionValue === '+' ? classes = [styles.numberValue, styles.Green].join(' ') : classes = [styles.numberValue, styles.Red].join(' ')}/>
                         <input type="submit" className={this.state.optionValue === '+' ? classes = [styles.ButtonSubmit, styles.Green].join(' ') : classes = [styles.ButtonSubmit, styles.Red].join(' ')} value="Add" />
                     </form>
+                    <List earnings={this.state.earn} expenses={this.state.exp} />
                 </div>
             </Aux>
         )
