@@ -22,7 +22,9 @@
     border: none;
 }
 
-.selectValue:focus {
+.selectValue:focus,
+.numberValue:focus,
+.inputValue:focus {
     outline: none;
 }
 
@@ -42,10 +44,6 @@
     transition: all .8s;
     background: transparent;
     border: none;
-}
-
-.inputValue:focus {
-    outline: none;
 }
 
 .ButtonSubmit {

@@ -11,12 +11,22 @@ class ContainerApp extends Component {
             optionValue: '+',
             earn: [
                 {text: 'Bo', numb: 14},
-                {text: 'Bo2', numb: 11}
+                {text: 'Bo2', numb: 11},
+                {text: 'Bo3', numb: 20}
             ],
-            exp: [11, 5, 8, 91],
+            earnTot: null,
+            exp: [
+                {text: 'Bo2', numb: 18},
+                {text: 'Bo34', numb: 1},
+                {text: 'Bo12', numb: 2}
+            ],
+            expTot: null,
             total: null
         }
         this.changeOption = this.changeOption.bind(this)
+        this.renderEarn = this.renderEarn.bind(this);
+        this.renderExp = this.renderExp.bind(this);
+        this.renderTot = this.renderTot.bind(this);
     }
 
     changeOption(){
@@ -28,23 +38,15 @@ class ContainerApp extends Component {
     }
 
     componentDidMount(){
-        this.updateBudget()
-    }
-
-    updateBudget(){
-        // let earning = this.state.earn.reduce((a, b) => {
-        //     return a + b;
-        // });
-
-        // let expenses = this.state.exp.reduce((a, b) => {
-        //     return a + b;
-        // })
-
-        // let totalBudget = earning - expenses;
-
-        // this.setState({
-        //     total: totalBudget
-        // })
+        this.renderEarn();
+        this.renderExp();
+        setTimeout(() => {
+            if((this.state.earnTot > 0) && this.state.expTot > 0){
+                this.renderTot();
+            } else {
+                alert('Not enough')
+            }
+        }, 1000)
     }
 
     addCount(e){
@@ -58,13 +60,44 @@ class ContainerApp extends Component {
         }
     }
 
+    renderEarn(){
+        let earnCount = this.state.earn;
+        let sum = 0;
+        earnCount.forEach(el => {
+            sum += el.numb;
+            this.setState({
+                earnTot: sum
+            })
+        })
+    }
+
+    renderExp(){
+        let expCount = this.state.exp;
+        let sum = 0;
+        expCount.forEach(el => {
+            sum += el.numb;
+            this.setState({
+                expTot: sum
+            })
+        })
+    }
+
+    renderTot(){
+        let earn = parseInt(this.state.earnTot);
+        let exp = parseInt(this.state.expTot);
+        let Total = parseInt(earn - exp);
+        this.setState({
+            total: Total
+        })
+    }
+
     render(){
         // eslint-disable-next-line
         let classes = [];
 
         return(
             <Aux>
-                <Budget earning={this.state.earn} expenses={this.state.exp} total={this.state.total}/>
+                <Budget earning={this.state.earnTot} expenses={this.state.expTot} total={this.state.total} />
                 <div className={styles.ContainerWhole}>
                     <form onSubmit={(e) => this.addCount(e)} className={styles.FormCont}>
                         <select onChange={this.changeOption} ref={(a) => this._inputElement = a} className={this.state.optionValue === '+' ? classes = [styles.selectValue, styles.Green].join(' ') : classes = [styles.selectValue, styles.Red].join(' ')}>
